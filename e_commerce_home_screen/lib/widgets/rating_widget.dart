@@ -7,7 +7,7 @@ class RatingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
       decoration: BoxDecoration(
         color: Color(0xfff5f4fd),
         borderRadius: BorderRadius.circular(15),
@@ -16,7 +16,6 @@ class RatingWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.star_rounded, size: 24, color: Color(0xff827beb)),
-          SizedBox(width: 5),
           Text(
             rate,
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),

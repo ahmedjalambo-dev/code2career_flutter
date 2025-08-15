@@ -1,6 +1,5 @@
 import 'package:e_commerce_home_screen/widgets/rating_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class FreelancerWidget extends StatelessWidget {
   final String name;

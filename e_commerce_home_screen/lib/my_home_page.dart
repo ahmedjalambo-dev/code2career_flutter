@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:e_commerce_home_screen/widgets/freelancer_widget.dart';
 import 'package:e_commerce_home_screen/widgets/section_title_widget.dart';
+import 'package:e_commerce_home_screen/widgets/service_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -10,6 +13,8 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
+        elevation: 0,
         leading: IconButton(
           onPressed: () {},
           icon: SvgPicture.asset('assets/images/menu.svg'),
@@ -172,34 +177,45 @@ class MyHomePage extends StatelessWidget {
             SizedBox(height: 16),
 
             /// Freelancer
-            Row(
-              spacing: 16,
-              children: [
-                FreelancerWidget(
-                  imgPath: 'assets/images/freelancer.png',
-                  name: 'Wade Warren',
-                  title: 'Beautician',
-                ),
-                FreelancerWidget(
-                  imgPath: 'assets/images/freelancer.png',
-                  name: 'Wade Warren',
-                  title: 'Beautician',
-                ),
-                FreelancerWidget(
-                  imgPath: 'assets/images/freelancer.png',
-                  name: 'Wade Warren',
-                  title: 'Beautician',
-                ),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                spacing: 16,
+                children: [
+                  FreelancerWidget(
+                    imgPath: 'assets/images/freelancer.png',
+                    name: 'Wade Warren',
+                    title: 'Beautician',
+                  ),
+                  FreelancerWidget(
+                    imgPath: 'assets/images/freelancer.png',
+                    name: 'Wade Warren',
+                    title: 'Beautician',
+                  ),
+                  FreelancerWidget(
+                    imgPath: 'assets/images/freelancer.png',
+                    name: 'Wade Warren',
+                    title: 'Beautician',
+                  ),
+                  FreelancerWidget(
+                    imgPath: 'assets/images/freelancer.png',
+                    name: 'Wade Warren',
+                    title: 'Beautician',
+                  ),
+                  FreelancerWidget(
+                    imgPath: 'assets/images/freelancer.png',
+                    name: 'Wade Warren',
+                    title: 'Beautician',
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 16),
 
             SectionTitleWidget(title: 'Top Services'),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ServiceWidget(),
-            ),
+            ServiceWidget(imgPath: 'assets/images/serv1.png'),
+            ServiceWidget(imgPath: 'assets/images/serv2.png'),
+            ServiceWidget(imgPath: 'assets/images/serv3.png'),
           ],
         ),
       ),
