@@ -24,13 +24,11 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-
-        /// search and sort
-        child: Column(
-          children: [
-            Row(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
               spacing: 10,
               children: [
                 Expanded(
@@ -72,8 +70,103 @@ class MyHomePage extends StatelessWidget {
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+          SizedBox(height: 16),
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.white, Color(0xffCBDAEE), Color(0xff9cb9dd)],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            child: Row(
+              children: [
+                // Left side - Text content
+                Expanded(
+                  flex: 3,
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // "Today's Deal" text
+                        Text(
+                          "Today's Deal",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey[700],
+                            letterSpacing: 1.2,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+
+                        // "50% OFF" text
+                        const Text(
+                          "50% OFF",
+                          style: TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.black,
+                            height: 1.0,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+
+                        // Description text (Lorem ipsum)
+                        Text(
+                          "Et provident eos est dolore. Eum libero eligendi molestias aut et quibusdam aspernatur.",
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: Colors.grey[600],
+                            height: 1.4,
+                          ),
+                        ),
+                        const SizedBox(height: 24),
+
+                        // CTA Button
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            elevation: 0,
+                          ),
+                          child: Row(
+                            children: [
+                              const Text(
+                                "BUY IT NOW",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              Icon(Icons.arrow_forward),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                // Right side - Image
+                Expanded(
+                  flex: 2,
+                  child: Image.asset(
+                    'assets/images/woman.png',
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
