@@ -1,5 +1,5 @@
-import 'dart:io';
-
+import 'package:e_commerce_home_screen/core/routes.dart';
+import 'package:e_commerce_home_screen/screens/my_login_page.dart';
 import 'package:e_commerce_home_screen/widgets/freelancer_widget.dart';
 import 'package:e_commerce_home_screen/widgets/section_title_widget.dart';
 import 'package:e_commerce_home_screen/widgets/service_widget.dart';
@@ -28,6 +28,12 @@ class MyHomePage extends StatelessWidget {
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset('assets/images/shopping-cart.svg'),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, Routes.login);
+            },
+            icon: Icon(Icons.logout),
           ),
         ],
       ),

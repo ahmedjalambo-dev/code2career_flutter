@@ -1,4 +1,7 @@
-import 'package:e_commerce_home_screen/my_home_page.dart';
+import 'package:e_commerce_home_screen/core/routes.dart';
+import 'package:e_commerce_home_screen/screens/my_home_page.dart';
+import 'package:e_commerce_home_screen/screens/my_login_page.dart';
+import 'package:e_commerce_home_screen/screens/my_sgin_up_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +20,12 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Hind',
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff154883)),
       ),
-      home: MyHomePage(),
+      initialRoute: Routes.login,
+      routes: {
+        Routes.home: (context) => const MyHomePage(),
+        Routes.login: (context) => MyLoginPage(),
+        Routes.signUp: (context) => MySginupPage(),
+      },
     );
   }
 }
